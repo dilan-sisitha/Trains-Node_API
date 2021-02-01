@@ -18,15 +18,16 @@ const shedules = require("./Models/train shedule/shedule");
 const app = express();
 
 
-app.use('/user',userRoutes );
 
-app.use('/logindetails',userLogs);
+app.use('/api/user',userRoutes );
 
-app.use('/traindetails',traindetails);
+app.use('/api/logindetails',userLogs);
 
-app.use('/shedules',shedules);
+app.use('/api/traindetails',traindetails);
 
-app.get("/",(req,res)=>{
+app.use('/api/shedules',shedules);
+
+app.get("/api",(req,res)=>{
     res.send("this is working")
 
 });
